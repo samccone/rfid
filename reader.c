@@ -67,7 +67,10 @@ void loop(void) {
     Serial.println("Found an ISO14443A card");
     Serial.print("  UID Length: ");Serial.print(uidLength, DEC);Serial.println(" bytes");
     Serial.print("  UID Value: ");
-    nfc.PrintHex(uid, uidLength);
+    Serial.println("---");
+    for(int i = 0; i < 7; ++i) {
+      Serial.print(uid[i], BIN);
+    }
     Serial.println("\n");
     delay(1000);
   }
